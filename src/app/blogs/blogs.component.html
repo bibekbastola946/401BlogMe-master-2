@@ -1,0 +1,34 @@
+<div class="py-5">
+    <div class="container py-5">
+        <div *ngIf="!blogsData || blogsData?.length == 0" class="text-center"><p>There is no blog. Please click on Click Here To add Blog on 'HomePage'.</p></div>
+<!--         
+        <div class="card" style="width: 18rem;" *ngFor="let blog of blogsData">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Titile: {{blog.title ? blog.title : '-' }}</h5>
+              <p class="card-text">Details: {{blog.detailOfBlog}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+          <section class="details-card">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let blog of blogsData">
+                        <div class="card-content">
+                            <div class="card-img" >
+                                <img [src]="blog.imageUrl"alt="Card image cap"style="height: 286px; width: 293px;">
+                            </div>
+                            <div class="card-desc">
+                                <h3><strong>Title</strong> {{blog.title ? blog.title : '-' }}</h3>
+                                <p><strong>Details:</strong> {{blog.detailOfBlog}}</p>
+                                    <!-- <a href="#" class="btn-card">Read</a>    -->
+                            </div>
+                        </div>
+                    </div>
+             
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>

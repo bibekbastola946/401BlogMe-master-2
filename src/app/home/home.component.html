@@ -1,0 +1,237 @@
+<div class="backGroundColor ">
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Hi there write your blog here!</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #createBlog="ngForm">
+        <div class="form-group">
+          <label for="title">Header Title</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="blogModel.title" placeholder="Enter your title"
+              name="title">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Url">Url of image or Video<span class="text-danger">*</span></label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="blogModel.imageUrl"
+              placeholder="Enter url of Image OR Video" name="ImageUrl" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="buttonTarget">Blog Type</label>
+          <div class="input-group">
+            <select class="form-control" name="buttonTarget" [(ngModel)]="blogModel.type">
+              <option *ngFor="let option of blogType" [value]="option.val" >{{option.displayName}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="banner">Detail of Blog</label>
+          <div class="input-group">
+            <textarea style="height: 200px;" type="text" class="form-control" [(ngModel)]="blogModel.detailOfBlog" placeholder="Detail of blog"
+              id="DetailOfBlog" name="DetailOfBlog"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" [disabled]="!createBlog.valid"
+        (click)="c('Save click')">Save</button>
+    </div>
+  </ng-template>
+
+<div class=" text-center text-white " >
+  <h2>Publish your passions, your way</h2>
+  <p>Create a unique and beautiful blog. It’s easy and free.</p>
+  <button class="btn btn-warning text-white" (click)="open(content)">Click Here To add Blog</button>
+  <div >
+    <img src="//lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=d"
+      class="theme--layer theme--layer-1 vase" alt="Vase" sizes="21vw" srcset="//lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w32 32w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w48 48w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w64 64w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w96 96w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w128 128w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w192 192w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w256 256w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w384 384w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w512 512w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w768 768w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w1024 1024w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=w1200 1200w,
+               //lh3.googleusercontent.com/jQrLB0S1fjOjqnJ145d0OBbOHHIR9nce1lnjzGL2YCvDK8ocxIZOM6wR3GNJLw=d 1600w">
+    <img src="//lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=d"
+      class="theme--layer theme--layer-1 tea" alt="Cup" sizes="(min-width: 0.5rem) 11vw, 35vw" srcset="//lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w32 32w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w48 48w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w64 64w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w96 96w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w128 128w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w192 192w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w256 256w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w384 384w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w512 512w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w768 768w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w1024 1024w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=w1200 1200w,
+               //lh3.googleusercontent.com/gz9btiN62BwKFzOWZO-DmTZDlraq172rVXTZ_TQwRDy8hT-VrzOVVfMp1nzupJY=d 1600w">
+    <img src="//lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=d"
+      class="theme--layer theme--layer-1 slipper" alt="Slipper" sizes="15vw" srcset="//lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w32 32w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w48 48w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w64 64w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w96 96w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w128 128w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w192 192w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w256 256w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w384 384w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w512 512w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w768 768w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w1024 1024w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=w1200 1200w,
+               //lh3.googleusercontent.com/Y1IHnQ0sM4cWJzRXAPAUA81jkwPmNDEq4nqhjUZN_oYhsyO-_UsuWx20Oy16acE=d 1600w">
+    <img src="//lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=d"
+      class="theme--layer theme--layer-1 picture" alt="Picture" sizes="(min-width: 37.5rem) 17vw, 55vw" srcset="//lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w32 32w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w48 48w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w64 64w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w96 96w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w128 128w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w192 192w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w256 256w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w384 384w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w512 512w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w768 768w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w1024 1024w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=w1200 1200w,
+               //lh3.googleusercontent.com/WrBvOY07H7-s7HBXAjxwftmhbRC9E6U0jFl-84rniR1UIJVDY4V9El19hkEWtA=d 1600w">
+    <img src="//lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=d"
+      class="theme--layer theme--layer-1 letter-c" alt="Letter C" sizes="(min-width: 37.5rem) 7vw, 21vw" srcset="//lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w32 32w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w48 48w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w64 64w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w96 96w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w128 128w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w192 192w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w256 256w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w384 384w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w512 512w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w768 768w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w1024 1024w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=w1200 1200w,
+               //lh3.googleusercontent.com/6GftHp2q8zrjTzGG0Xz0zQZYGRh0YuUPyxNwVQLiaLjZboXhWs_TOfTzvxI9DLc=d 1600w">
+    <img src="//lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=d"
+      class="theme--layer theme--layer-1 letter-b" alt="Letter B" sizes="(min-width: 37.5rem) 7vw, 21vw" srcset="//lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w32 32w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w48 48w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w64 64w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w96 96w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w128 128w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w192 192w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w256 256w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w384 384w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w512 512w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w768 768w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w1024 1024w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=w1200 1200w,
+               //lh3.googleusercontent.com/9LvBDozBm5r8Ys3F3cYH2eFwwQJMo-uDsL-c3dqtmAYfTmF7hiHCNcRHmMZw=d 1600w">
+    <img src="//lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=d"
+      class="theme--layer theme--layer-1 letter-a" alt="Letter A" sizes="(min-width: 37.5rem) 7vw, 21vw" srcset="//lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w32 32w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w48 48w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w64 64w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w96 96w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w128 128w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w192 192w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w256 256w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w384 384w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w512 512w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w768 768w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w1024 1024w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=w1200 1200w,
+               //lh3.googleusercontent.com/Sp4ZzNq2eI5tylQz9NrBND3-VDG7XcKBr0PXMtqZFjvNywZSXRsOKmeCTxQ8lH4=d 1600w">
+    <img src="//lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=d"
+      class="theme--layer theme--layer-1 football" alt="Ball" sizes="(min-width: 37.5rem) 15vw, 30vw" srcset="//lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w32 32w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w48 48w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w64 64w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w96 96w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w128 128w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w192 192w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w256 256w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w384 384w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w512 512w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w768 768w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w1024 1024w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=w1200 1200w,
+               //lh3.googleusercontent.com/qxx_R2lwF9JfNbtMoMyK2x73XezkYruSM6CVrLVpLqZ8CCxiWOdbIn8aR9kjsw=d 1600w">
+    <img src="//lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=d"
+      class="theme--layer theme--layer-1 blog" alt="Family Blog"
+      sizes="(min-width: 75rem) 55vw, (min-width: 60rem) 60vw, 70vw" srcset="//lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w32 32w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w48 48w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w64 64w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w96 96w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w128 128w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w192 192w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w256 256w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w384 384w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w512 512w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w768 768w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w1024 1024w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=w1200 1200w,
+               //lh3.googleusercontent.com/qfL8w8HhVvq0PI9rsXZbjBc9gDZtNbE8km3C7-2jMje6Fq0WGWV7x2SNiqpK=d 1600w">
+  </div>
+</div>
+</div>
+
+<section class="section memories active" tabindex="0">
+  <header>
+    <div class="text-white">
+      <h2>
+        Hang onto your memories
+      </h2>
+      <p>
+        Save the moments that matter.
+        <br>
+        Sharing your funn movement, breaking news.
+      </p>
+    </div>
+  </header>
+  <div style="margin-left: 500px; margin-top: -90px;">
+    <img src="//lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=d" class="background--layer documents" alt="Documents" sizes="(min-width: 37.5rem) 17vw, 45vw" srcset="//lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w32 32w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w48 48w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w64 64w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w96 96w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w128 128w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w192 192w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w256 256w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w384 384w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w512 512w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w768 768w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w1024 1024w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=w1200 1200w,
+               //lh3.googleusercontent.com/g15zvfM9ccRqjI8oFWNH4tdgvMF-BQEEpXwSEDRJnyvaJTTx7bI2XJ1bVWh9Vz8=d 1600w">
+  <img src="//lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=d" class="background--layer familyphotos" alt="Family Photo" sizes="(min-width: 37.5rem) 23vw, 53vw" srcset="//lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w32 32w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w48 48w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w64 64w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w96 96w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w128 128w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w192 192w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w256 256w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w384 384w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w512 512w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w768 768w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w1024 1024w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=w1200 1200w,
+               //lh3.googleusercontent.com/ytR9Qe3qeOc6qWzwP8N50Jew_RkP68A3gaH77GwUE4EA0fHhg5E6u0mihK6Tntc=d 1600w">
+  <img src="//lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=d" class="background--layer playicon" alt="Play Icon" sizes="(min-width: 37.5rem) 20vw, 43vw" srcset="//lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w32 32w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w48 48w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w64 64w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w96 96w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w128 128w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w192 192w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w256 256w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w384 384w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w512 512w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w768 768w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w1024 1024w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=w1200 1200w,
+               //lh3.googleusercontent.com/GF-5w3cTsh0HnBwp1DLBaMCAwrPCwojFUPyOkvvk47RyFqVsxT6qKkdWnbz4=d 1600w">
+  </div>
